@@ -1,0 +1,17 @@
+testtrigger:
+    trigger:
+        include:
+            - project: 'devops/deployment'
+              ref: 'template'
+              file: '.gitlab-ci-backend.yml'
+    only:
+        - test
+
+prodtrigger:
+    trigger:
+        include:
+            - project: 'devops/deployment'
+              ref: 'template'
+              file: '.gitlab-ci-backend.yml'
+    only:
+        - main

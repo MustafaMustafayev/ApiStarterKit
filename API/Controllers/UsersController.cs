@@ -32,6 +32,7 @@ public class UsersController(
     [HttpPost("generic")]
     public async Task<IActionResult> GetAsPaginated([FromBody] GenericRequestDto dto)
     {
+        string password = "12234";
         var response = await userService.GetAsGenericListAsync(dto);
         return Ok(response);
     }

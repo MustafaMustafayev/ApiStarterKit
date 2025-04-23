@@ -1,24 +1,77 @@
-# NetAPIStarter
+# API Starter Kit
 
-### Code contributors
+A modern .NET API starter kit with layered architecture, following clean code principles and best practices.
 
-![Alt](https://repobeats.axiom.co/api/embed/f8c50b5c55ce520d8198a81cb6f63150cec32209.svg "Repobeats analytics image")
+## Project Structure
 
-> .NET9 Web API  project with Entity framework code first approach. In this template n-tier architecture, repository and unit of work pattern implemented,
-> database based logging implemented using action filters, request profiling added using MiniProfiler, unhandled exception handled by sentry,
-> source code generator implemented, this mean is that all crud operaions (paginatedlist, get, getbyid, add, update, delete, softdelete) generated automatically in a 2 seconds after creating entity,
-> watcdog implemented,
-> token black list implemented, custom validate token attribute added,
-> response security headers added, audit properties implemented by overriding SaveChangesAsync method of DbContext, docker-compose yaml written,
-> authentication and authorization implemented using custom middleware, generic CRUD operations implemented, automapper configured,
-> simple one to many role and permission logic implemented,
-> password policy implemented,
-> anti forgery token implemented,
-> generic pagination, global exception handling, localization, whitelist, custom generic automapping & validations between entity and dtos implemented,
-> mail sender implemented,
-> encoding and decoding implemened,
-> sftp functions implemented,
-> source code generator for DAL, BLL, API layer implemented,
-> Database and application dockerized. Docker compose implemented with build step,
-> automated service registration implemented using Scrutor,
-> .editorconfig implemented to the best conventions rules
+The solution follows a layered architecture pattern with the following projects:
+
+- **API**: Presentation layer - Contains controllers and API endpoints
+- **BLL**: Business Logic Layer - Contains business rules and services
+- **DAL**: Data Access Layer - Contains repositories and database context
+- **CORE**: Core layer - Contains interfaces, constants, and shared utilities
+- **DTO**: Data Transfer Objects - Contains request/response models
+- **ENTITIES**: Domain entities - Contains database models
+- **SOURCE**: Generate source code for all layers to implement CRUD operations
+
+## Prerequisites
+
+- .NET 9.0 or later
+- Visual Studio 2022 or later
+- PostgreSQL (for database)
+
+## Getting Started
+
+1. Clone the repository
+2. Open the solution in Visual Studio
+3. Restore NuGet packages
+4. Update the connection string in `appsettings.json`
+5. Run the database migrations
+6. Build and run the project
+
+## Features
+
+- Clean Architecture
+- Repository Pattern
+- Dependency Injection
+- Entity Framework Core
+- Swagger UI for API documentation
+- Docker support
+- CI/CD pipeline configuration
+
+## Development
+
+### Building the Project
+
+```bash
+dotnet build
+```
+
+### Running the Project
+
+```bash
+dotnet run --project API
+```
+
+### Running Tests
+
+```bash
+dotnet test
+```
+
+## Docker Support
+
+The project includes Docker support. To build and run the container:
+
+```bash
+docker build -t api-starter .
+docker run -p 5000:80 api-starter
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
